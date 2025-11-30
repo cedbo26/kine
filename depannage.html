@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Dépannage – Maquette</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivoire: #FAF9F6;
+      --beige: #F5F3EC;     /* corrigé : plus de #F5F5DC */
+      --vert: #A8D5BA;
+      --cuivre: #B87333;
+      --texte: #333333;
+      --whatsapp: #25D366;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--ivoire);
+      color: var(--texte);
+      line-height: 1.7;
+    }
+
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+      color: var(--texte);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 1.4rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0.9rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      background-color: var(--ivoire);
+      text-align: center;
+      padding: 70px 0 40px;
+    }
+
+    .hero__intro {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.02rem;
+    }
+
+    /* CALLOUT */
+
+    .callout {
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      font-size: 0.98rem;
+    }
+
+    .callout--warning {
+      background-color: rgba(168, 213, 186, 0.2);
+      border: 2px solid var(--vert);
+    }
+
+    .callout--warning strong {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    /* LISTES */
+
+    .icon-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 0 30px;
+      font-size: 0.98rem;
+    }
+
+    .icon-list li {
+      margin-bottom: 0.45rem;
+      padding-left: 1.6rem;
+      position: relative;
+    }
+
+    .icon-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--cuivre);
+      font-weight: 700;
+    }
+
+    .icon-list--green li::before {
+      content: "✅";
+      color: var(--vert);
+    }
+
+    /* TIMELINE COURTE */
+
+    .timeline {
+      margin: 0 0 30px;
+    }
+
+    .timeline__item {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      column-gap: 16px;
+      align-items: flex-start;
+      padding: 16px 0;
+    }
+
+    .timeline__badge {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: rgba(168, 213, 186, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--cuivre);
+    }
+
+    .timeline__content h3 {
+      color: var(--cuivre);
+    }
+
+    /* CTA DOUBLE BOUTON */
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, var(--beige), rgba(168, 213, 186, 0.25));
+      padding: 60px 0;
+    }
+
+    .cta h2 {
+      margin-bottom: 2rem;
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn--whatsapp {
+      background-color: var(--whatsapp);
+      color: #ffffff;
+    }
+
+    .btn--phone {
+      background-color: var(--cuivre);
+      color: #ffffff;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .timeline__item {
+        grid-template-columns: 1fr;
+        row-gap: 6px;
+      }
+
+      .timeline__badge {
+        margin-bottom: 2px;
+      }
+
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrapper">
+      <h1>Dépannage</h1>
+      <p class="hero__intro">
+        Choc émotionnel, début de grippe, tension soudaine.
+        Pour les personnes déjà accompagnées en kinésiologie, une séance express permet de stabiliser le système nerveux dans l’instant T.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION CONDITIONS & QUAND RECOURIR -->
+  <section>
+    <div class="wrapper">
+      <div class="callout callout--warning">
+        <strong>⚡ Service réservé aux clients déjà suivis</strong>
+        Ce service s’adresse uniquement aux personnes ayant déjà eu <strong>au minimum 1 séance complète</strong> de kinésiologie.
+        Le dépannage n’est pas une première séance — c’est une intervention ciblée pour clients connus.
+      </div>
+
+      <h2>Quand recourir à un dépannage&nbsp;?</h2>
+
+      <ul class="icon-list">
+        <li><strong>Choc émotionnel</strong> : annonce brutale, conflit, stress intense soudain</li>
+        <li><strong>Début de symptômes physiques</strong> : grippe qui commence, migraine qui monte, tension qui explose</li>
+        <li><strong>Surcharge nerveuse</strong> : avant événement stressant (examen, présentation, décision importante)</li>
+        <li><strong>Déséquilibre aigu</strong> : sensation de “décrochage”, fatigue extrême, besoin de recentrage immédiat</li>
+      </ul>
+
+      <h2>Ce qui est fait en séance express</h2>
+
+      <div class="timeline">
+        <div class="timeline__item">
+          <div class="timeline__badge">01</div>
+          <div class="timeline__content">
+            <h3>Écoute de la situation (5 min)</h3>
+            <p>
+              Contexte récent, ressenti immédiat, besoin prioritaire.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline__item">
+          <div class="timeline__badge">02</div>
+          <div class="timeline__content">
+            <h3>Test musculaire ciblé (15 min)</h3>
+            <p>
+              Identification des stress actifs — pas d’investigation en profondeur, juste les urgences corporelles.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline__item">
+          <div class="timeline__badge">03</div>
+          <div class="timeline__content">
+            <h3>Corrections prioritaires (20 min)</h3>
+            <p>
+              Points réflexes, respiration, tapotements, rééquilibrage énergétique rapide.
+              Outils simples à reproduire chez vous.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p><strong>Durée totale&nbsp;:</strong> 30–45 min</p>
+
+      <h2>Modalités pratiques</h2>
+
+      <ul class="icon-list icon-list--green">
+        <li><strong>Disponibilité</strong> : sous 48h selon agenda</li>
+        <li><strong>Lieux</strong> : Cheseaux-Noréaz ou Chavornay</li>
+        <li><strong>Tarif</strong> : Me contacter ou CHF XX.— (à définir)</li>
+        <li><strong>Réservation</strong> : par WhatsApp ou téléphone uniquement</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA DOUBLE BOUTONS -->
+  <section class="cta">
+    <div class="wrapper">
+      <h2>Besoin d’un dépannage&nbsp;?</h2>
+
+      <div class="cta-grid">
+        <a
+          class="btn btn--whatsapp"
+          href="https://wa.me/41XXXXXXXXX?text=Bonjour%20Johanna,%20je%20souhaite%20une%20s%C3%A9ance%20d%C3%A9pannage"
+          target="_blank" rel="noopener noreferrer"
+        >
+          💬 Demander un dépannage
+        </a>
+
+        <a
+          class="btn btn--phone"
+          href="tel:+41XXXXXXXXX"
+        >
+          📞 Appeler directement
+        </a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
