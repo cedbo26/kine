@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Kinésiologie enfants & ados – Maquette</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivoire: #FAF9F6;
+      --beige: #F5F5DC;
+      --beige-2: #F5F3EC;
+      --vert: #A8D5BA;
+      --cuivre: #B87333;
+      --texte: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--ivoire);
+      color: var(--texte);
+      line-height: 1.7;
+    }
+
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+      color: var(--texte);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0.9rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      background-color: var(--ivoire);
+      text-align: center;
+      padding: 60px 0 60px;
+    }
+
+    .hero img {
+      max-width: 70%;
+      height: auto;
+      margin: 0 auto 30px;
+      display: block;
+      border-radius: 18px;
+    }
+
+    .hero__intro {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    /* ACCORDION (tranches d'âge & FAQ) */
+
+    .accordion {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .accordion details {
+      background-color: #ffffff;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      border-left: 5px solid var(--vert);
+    }
+
+    .accordion summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 14px 18px;
+      background-color: var(--vert);
+      color: #ffffff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .accordion summary::after {
+      content: "▾";
+      float: right;
+      font-size: 0.9rem;
+    }
+
+    details[open] summary::after {
+      content: "▴";
+    }
+
+    .accordion__content {
+      padding: 14px 18px 18px;
+      background-color: #ffffff;
+      font-size: 0.98rem;
+    }
+
+    .accordion__content ul {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+
+    .accordion__content li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* TIMELINE */
+
+    .timeline {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline__item {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      column-gap: 20px;
+      align-items: flex-start;
+      padding: 20px 0;
+    }
+
+    .timeline__badge {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: rgba(168, 213, 186, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--cuivre);
+    }
+
+    .timeline__content h3 {
+      color: var(--cuivre);
+    }
+
+    .timeline__divider {
+      border: 0;
+      border-top: 1px dashed #cfcfcf;
+      margin: 0 auto;
+      max-width: 60%;
+    }
+
+    /* CALLOUT / ALERT */
+
+    .callout {
+      max-width: 900px;
+      margin: 35px auto 0;
+      padding: 18px 22px;
+      border-radius: 10px;
+      font-size: 0.98rem;
+    }
+
+    .callout--info {
+      background-color: rgba(168, 213, 186, 0.18);
+      border-left: 4px solid var(--vert);
+    }
+
+    /* FAQ section reuse accordion */
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, var(--ivoire), rgba(168, 213, 186, 0.18));
+      padding: 60px 0;
+    }
+
+    .cta h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .btn--primary {
+      background-color: var(--cuivre);
+      color: #ffffff;
+    }
+
+    .btn--primary:hover {
+      background-color: #A66B2D;
+    }
+
+    /* SECTION BACKGROUNDS */
+
+    .section--age {
+      background-color: var(--beige);
+    }
+
+    .section--faq {
+      background-color: var(--beige-2);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .hero img {
+        max-width: 100%;
+      }
+
+      .timeline__item {
+        grid-template-columns: 1fr;
+        row-gap: 8px;
+      }
+
+      .timeline__badge {
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrapper">
+      <img src="assets/hero-enfants.jpg" alt="Kinésiologie pour enfants et adolescents">
+      <h1>Kinésiologie pour enfants et adolescents — Yverdon &amp; Nord vaudois</h1>
+      <p class="hero__intro">
+        Les enfants parlent par leur corps. Troubles scolaires, émotions débordantes, peurs du quotidien, difficultés de concentration — autant de signaux que le corps envoie.
+        La kinésiologie utilise le test musculaire pour identifier les stress physiques et émotionnels, puis rééquilibre le système nerveux avec des techniques douces :
+        points réflexes, respiration, mouvements simples. Un accompagnement bienveillant, adapté à chaque âge, sans jugement.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 1 : TRANCHES D'ÂGE -->
+  <section class="section--age">
+    <div class="wrapper">
+      <h2>Des besoins différents selon l&rsquo;âge</h2>
+
+      <div class="accordion">
+        <details open>
+          <summary>Petite enfance (0–6 ans)</summary>
+          <div class="accordion__content">
+            <ul>
+              <li>Peur de la crèche après chute ou traumatisme</li>
+              <li>Anxiété de séparation, peur du noir</li>
+              <li>Énurésie (pipi au lit), troubles du sommeil</li>
+              <li>Peur des blouses blanches, stress médical</li>
+              <li>Allergies, asthme, bronchiolite</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Enfance (7–12 ans)</summary>
+          <div class="accordion__content">
+            <ul>
+              <li>TDAH, TDA, troubles de la concentration</li>
+              <li>Stress scolaire, pression des notes</li>
+              <li>Difficultés d’apprentissage, dyslexie</li>
+              <li>Harcèlement scolaire, conflits relationnels</li>
+              <li>Addiction aux écrans, désintoxication nécessaire</li>
+              <li>Maux de ventre, maux de tête à répétition</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Adolescence (13–18 ans)</summary>
+          <div class="accordion__content">
+            <ul>
+              <li>Acné, préparation à l’appareil dentaire (adaptation corps étranger)</li>
+              <li>Stress des examens, pression d’orientation</li>
+              <li>Colère, tristesse, manque de confiance</li>
+              <li>TSA, hypersensibilité, troubles sensoriels</li>
+              <li>Séparation des parents, deuil, changements familiaux</li>
+              <li>Bégaiement, troubles psychosomatiques</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 : DÉROULEMENT -->
+  <section>
+    <div class="wrapper">
+      <h2>Comment se passe une séance avec un enfant&nbsp;?</h2>
+
+      <div class="timeline">
+        <div class="timeline__item">
+          <div class="timeline__badge">01</div>
+          <div class="timeline__content">
+            <h3>Échange (15 min)</h3>
+            <p>
+              Accueil de l’enfant et du parent. Discussion sur la situation, les besoins, sans obligation de tout raconter.
+              L’enfant peut simplement être présent.
+            </p>
+          </div>
+        </div>
+
+        <hr class="timeline__divider">
+
+        <div class="timeline__item">
+          <div class="timeline__badge">02</div>
+          <div class="timeline__content">
+            <h3>Test musculaire adapté (20 min)</h3>
+            <p>
+              Dialogue avec le corps de l’enfant via le test musculaire. Le test révèle les stress actifs — physiques,
+              émotionnels, scolaires — même non verbalisés.
+            </p>
+          </div>
+        </div>
+
+        <hr class="timeline__divider">
+
+        <div class="timeline__item">
+          <div class="timeline__badge">03</div>
+          <div class="timeline__content">
+            <h3>Corrections douces (25 min)</h3>
+            <p>
+              Points réflexes légers, respiration guidée, mouvements simples (Brain Gym si pertinent),
+              libération des tensions par le corps. Tout est doux, respectueux, ludique si besoin.
+            </p>
+          </div>
+        </div>
+
+        <hr class="timeline__divider">
+
+        <div class="timeline__item">
+          <div class="timeline__badge">04</div>
+          <div class="timeline__content">
+            <h3>Outils pratiques (10 min)</h3>
+            <p>
+              Exercices simples pour la maison, rituels du soir, gestes de stabilisation.
+              L’enfant et le parent repartent avec des ressources concrètes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout--info">
+        <strong>Durée totale&nbsp;:</strong> 60 min (enfant), 75 min (adolescent)
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 : FAQ -->
+  <section class="section--faq">
+    <div class="wrapper">
+      <h2>Questions fréquentes</h2>
+
+      <div class="accordion">
+        <details open>
+          <summary>Mon enfant doit-il parler de ses problèmes&nbsp;?</summary>
+          <div class="accordion__content">
+            <p>
+              Non. Le test musculaire fonctionne même si l’enfant ne verbalise rien. Le corps répond de manière autonome.
+              Certains enfants préfèrent jouer, dessiner, ou simplement être là — c’est suffisant.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>À partir de quel âge&nbsp;?</summary>
+          <div class="accordion__content">
+            <p>
+              Dès la petite enfance (2–3 ans). Le test musculaire s’adapte à l’âge&nbsp;: test direct sur l’enfant
+              ou via le parent (test de transfert) pour les très jeunes.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Combien de séances nécessaires&nbsp;?</summary>
+          <div class="accordion__content">
+            <p>
+              Variable selon la situation. Les enfants réagissent souvent plus rapidement que les adultes
+              (moins de “couches” émotionnelles accumulées). Minimum 3 séances recommandé, avec espacement d’un mois.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Est-ce remboursé par l’assurance&nbsp;?</summary>
+          <div class="accordion__content">
+            <p>
+              Contenu temporairement masqué. Les informations détaillées sur le remboursement par les assurances
+              complémentaires seront ajoutées dès validation des reconnaissances officielles.
+            </p>
+            <!-- La kinésiologie est reconnue ASCA/RME.
+            La plupart des assurances complémentaires remboursent 70–90% des séances.
+            Vérifiez votre contrat. -->
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrapper">
+      <h2>Prêt·e à accompagner votre enfant&nbsp;?</h2>
+      <a href="#contact" class="btn btn--primary">Prendre rendez-vous pour mon enfant</a>
+    </div>
+  </section>
+
+</body>
+</html>
