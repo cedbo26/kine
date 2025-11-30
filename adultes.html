@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Pour les adultes – Maquette</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivoire: #FAF9F6;
+      --beige: #F5F3EC;     /* corrigé : plus de #F5F5DC */
+      --beige-2: #F5F3EC;
+      --vert: #A8D5BA;
+      --cuivre: #B87333;
+      --texte: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--ivoire);
+      color: var(--texte);
+      line-height: 1.7;
+    }
+
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+      color: var(--texte);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0.9rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      background-color: var(--ivoire);
+      text-align: center;
+      padding: 60px 0 60px;
+    }
+
+    .hero__intro {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    /* ICON BOXES */
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .icon-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .icon-box__icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: var(--cuivre);
+    }
+
+    .icon-box h3 {
+      margin-bottom: 0.7rem;
+    }
+
+    .icon-box ul {
+      padding-left: 1.1rem;
+      margin: 0;
+      font-size: 0.96rem;
+    }
+
+    .icon-box li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* 2-COLUMN SECTION */
+
+    .two-cols {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 40px;
+      align-items: flex-start;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .two-cols__visual {
+      min-height: 220px;
+      border-radius: 16px;
+      border: 1px dashed rgba(0, 0, 0, 0.1);
+      background: repeating-linear-gradient(
+        135deg,
+        rgba(184, 115, 51, 0.05),
+        rgba(184, 115, 51, 0.05) 6px,
+        rgba(168, 213, 186, 0.15) 6px,
+        rgba(168, 213, 186, 0.15) 12px
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: #666666;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* CALLOUTS */
+
+    .callout {
+      max-width: 900px;
+      margin: 25px auto 0;
+      padding: 18px 22px;
+      border-radius: 10px;
+      font-size: 0.98rem;
+    }
+
+    .callout--warning {
+      background-color: rgba(184, 115, 51, 0.08);
+      border-left: 4px solid var(--cuivre);
+    }
+
+    .callout--info {
+      background-color: rgba(168, 213, 186, 0.18);
+      border-left: 4px solid var(--vert);
+    }
+
+    /* TIMELINE */
+
+    .timeline {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline__item {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      column-gap: 20px;
+      align-items: flex-start;
+      padding: 20px 0;
+    }
+
+    .timeline__badge {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: rgba(168, 213, 186, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--cuivre);
+    }
+
+    .timeline__content h3 {
+      color: var(--cuivre);
+    }
+
+    .timeline__divider {
+      border: 0;
+      border-top: 1px dashed #cfcfcf;
+      margin: 0 auto;
+      max-width: 60%;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, var(--ivoire), rgba(168, 213, 186, 0.18));
+      padding: 60px 0;
+    }
+
+    .cta h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .btn--primary {
+      background-color: var(--cuivre);
+      color: #ffffff;
+    }
+
+    .btn--primary:hover {
+      background-color: #A66B2D;
+    }
+
+    /* BACKGROUNDS */
+
+    .section--domains {
+      background-color: var(--beige);
+    }
+
+    .section--progress {
+      background-color: var(--beige-2);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .icon-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .two-cols {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .timeline__item {
+        grid-template-columns: 1fr;
+        row-gap: 8px;
+      }
+
+      .timeline__badge {
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrapper">
+      <h1>Pour les adultes</h1>
+      <p class="hero__intro">
+        Lombalgies récurrentes, stress qui dure, sommeil difficile, schémas qui se répètent.
+        La kinésiologie agit sur le corps dans son ensemble&nbsp;: muscles, méridiens, système nerveux, organes.
+        Le test musculaire révèle les tensions informatives — ces signaux que le corps envoie depuis trop longtemps.
+        Puis vient le rééquilibrage&nbsp;: points réflexes, respiration, libération des blocages énergétiques selon la médecine traditionnelle chinoise.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 1 : DOMAINES -->
+  <section class="section--domains">
+    <div class="wrapper">
+      <h2>La kinésiologie accompagne</h2>
+
+      <div class="icon-grid">
+        <div class="icon-box">
+          <div class="icon-box__icon">🧠</div>
+          <h3>Mental &amp; émotionnel</h3>
+          <ul>
+            <li>Stress chronique, anxiété</li>
+            <li>Burnout, charge mentale</li>
+            <li>Troubles du sommeil, fatigue</li>
+            <li>Concentration, clarté mentale</li>
+            <li>Gestion des émotions</li>
+          </ul>
+        </div>
+
+        <div class="icon-box">
+          <div class="icon-box__icon">💪</div>
+          <h3>Physique &amp; somatique</h3>
+          <ul>
+            <li>Douleurs dos, nuque, épaules</li>
+            <li>Tensions musculaires persistantes</li>
+            <li>Migraines, maux de tête</li>
+            <li>Troubles digestifs, somatisations</li>
+            <li>Mobilité réduite, raideurs</li>
+          </ul>
+        </div>
+
+        <div class="icon-box">
+          <div class="icon-box__icon">⚖️</div>
+          <h3>Équilibre global</h3>
+          <ul>
+            <li>Transitions de vie (deuil, reconversion)</li>
+            <li>Schémas répétitifs (travail, amour)</li>
+            <li>Accompagnement maladies chroniques*</li>
+            <li>Préparation événements (opération, examen)</li>
+            <li>Optimisation vitalité quotidienne</li>
+          </ul>
+          <p style="font-size:0.85rem; margin-top:0.6rem;">
+            *Accompagnement complémentaire, jamais en remplacement du suivi médical.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 : APPROCHE HOLISTIQUE -->
+  <section>
+    <div class="wrapper">
+      <h2>Corps, méridiens, émotions — un système global</h2>
+
+      <div class="two-cols">
+        <div>
+          <p>
+            La kinésiologie s’appuie sur la médecine traditionnelle chinoise&nbsp;: les méridiens relient organes, muscles et émotions.
+            Une tension dans le dos peut révéler un déséquilibre énergétique au niveau des reins.
+            Une difficulté à digérer peut être liée à un stress émotionnel non traité.
+          </p>
+          <p>
+            Le test musculaire identifie ces déséquilibres — même ceux dont vous n’avez pas conscience.
+            Le rééquilibrage énergétique restaure la circulation dans les méridiens, libère les blocages,
+            et permet au corps de retrouver sa capacité naturelle d’adaptation.
+          </p>
+
+          <div class="callout callout--warning">
+            <strong>Important&nbsp;:</strong>
+            La kinésiologie ne pose pas de diagnostic médical.
+            C’est un accompagnement complémentaire à la médecine conventionnelle, jamais un remplacement.
+          </div>
+        </div>
+
+        <div class="two-cols__visual">
+          Espace réservé pour un schéma des méridiens<br>
+          (image illustrative à insérer dans la version WordPress).
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 : DÉROULEMENT SÉANCE ADULTE -->
+  <section>
+    <div class="wrapper">
+      <h2>Comment se déroule une séance adulte&nbsp;?</h2>
+
+      <div class="timeline">
+        <div class="timeline__item">
+          <div class="timeline__badge">01</div>
+          <div class="timeline__content">
+            <h3>Définition de l’objectif (15–20 min)</h3>
+            <p>
+              Quel est votre besoin aujourd’hui&nbsp;? Douleur physique, stress émotionnel, besoin de clarté&nbsp;?
+              Nous définissons ensemble un objectif mesurable pour la séance.
+            </p>
+          </div>
+        </div>
+
+        <hr class="timeline__divider">
+
+        <div class="timeline__item">
+          <div class="timeline__badge">02</div>
+          <div class="timeline__content">
+            <h3>Test musculaire &amp; investigation (30–40 min)</h3>
+            <p>
+              Le test musculaire révèle les stress actifs&nbsp;: méridiens déséquilibrés, émotions bloquées, tensions structurelles.
+              Votre corps indique les priorités — pas moi.
+            </p>
+          </div>
+        </div>
+
+        <hr class="timeline__divider">
+
+        <div class="timeline__item">
+          <div class="timeline__badge">03</div>
+          <div class="timeline__content">
+            <h3>Rééquilibrage personnalisé (20–30 min)</h3>
+            <p>
+              Points réflexes neuro-lymphatiques et neuro-vasculaires, massage des méridiens, respiration dirigée,
+              mouvements oculaires, libération somato-émotionnelle si pertinent.
+              Tout est adapté à ce que le test révèle.
+            </p>
+          </div>
+        </div>
+
+        <hr class="timeline__divider">
+
+        <div class="timeline__item">
+          <div class="timeline__badge">04</div>
+          <div class="timeline__content">
+            <h3>Intégration &amp; autonomie (10 min)</h3>
+            <p>
+              Vérification de l’objectif atteint. Conseils personnalisés pour prolonger les effets entre séances&nbsp;:
+              auto-massage, respiration, hydratation, repos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout--info">
+        <strong>Durée totale&nbsp;:</strong>
+        60–90 min (jusqu’à 2&nbsp;h pour une première séance avec anamnèse complète).
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 : COMBIEN DE SÉANCES ? -->
+  <section class="section--progress">
+    <div class="wrapper">
+      <h2>Un accompagnement progressif</h2>
+
+      <div class="callout callout--info">
+        <p>
+          La kinésiologie fonctionne par “couches”.
+          Ce que vous ressentez (douleur, stress, fatigue) n’est que la pointe de l’iceberg.
+          En dessous se trouvent des causes émotionnelles, des mémoires corporelles, des schémas ancrés depuis longtemps.
+        </p>
+        <p>
+          Chaque séance retire une couche pour aller vers le cœur de la problématique.
+        </p>
+        <p>
+          <strong>En pratique&nbsp;:</strong><br>
+          – Minimum 5 séances recommandées pour un travail en profondeur<br>
+          – Rythme suggéré&nbsp;: 1 séance / mois ou tous les 2 mois<br>
+          – Les enfants réagissent plus vite (moins de couches accumulées)
+        </p>
+        <p>
+          <strong>Pourquoi la régularité compte&nbsp;?</strong><br>
+          Un intervalle de 6 mois laisse place à de nouveaux stress.
+          Le travail risque de rester superficiel plutôt que d’aborder les problématiques profondes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrapper">
+      <h2>Commencer votre accompagnement</h2>
+      <a href="#contact" class="btn btn--primary">Réserver une séance</a>
+    </div>
+  </section>
+
+</body>
+</html>
