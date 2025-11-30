@@ -1,5 +1,76 @@
-<nav>
-  <a href="enfants.html">Enfants</a>
-  <a href="adultes.html">Adultes</a>
-  <a href="depannage.html">Dépannage</a>
-</nav>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Cabinet de kinésiologie – Accueil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #FAF9F6;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .wrapper {
+      max-width: 500px;
+      padding: 30px 24px;
+      background: #FFFFFF;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      margin: 0 0 0.7rem;
+    }
+    p {
+      margin: 0 0 1.4rem;
+      font-size: 0.98rem;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    a {
+      display: block;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      border: 1px solid #B87333;
+      color: #B87333;
+      background: #FAF9F6;
+    }
+    a.primary {
+      background: #B87333;
+      color: #FFFFFF;
+    }
+    a:hover {
+      filter: brightness(0.96);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Cabinet de kinésiologie</h1>
+    <p>Choisissez la page qui correspond à votre besoin&nbsp;:</p>
+    <div class="links">
+      <!-- adapte les href : enfants.html / enfants/ etc. -->
+      <a class="primary" href="enfants.html">Pour les enfants</a>
+      <a href="adultes.html">Pour les adultes</a>
+      <a href="depannage.html">Dépannage / urgence douce</a>
+    </div>
+  </div>
+</body>
+</html>
